@@ -90,7 +90,7 @@ fileprivate extension HttpRequest {
         return false
     }
     
-    func mathPath(_ host: String, with templateString: String, possibleValues: [String: String]?) -> Bool {
+    func mathPath(_ host: String, examplePath: String, with templateString: String, possibleValues: [String: String]?) -> Bool {
         let template: URITemplate = URITemplate(template: templateString)
         
         if let variables: [String:String] = template.extract(self.path) {
@@ -108,9 +108,12 @@ fileprivate extension HttpRequest {
             
             return true
         }else{
+            guard let requestComp: URLComponents = URLComponents(string: host + self.path),
+                let exampleComp: URLComponents = URLComponents(string: host + examplePath) else {
+                    return false
+            }
             
-            if let loc = self.path.range(of: templateString),
-                loc.lowerBound == self.path.startIndex {
+            if requestComp.path == exampleComp.path {
                 return true
             }else{
                 return false
@@ -163,7 +166,7 @@ fileprivate extension HttpRequest {
                ignoreHeaders: [String]
         ) -> Bool {
         
-        let isPathMatched: Bool = mathPath(host, with: template, possibleValues: possibleValues)
+        let isPathMatched: Bool = mathPath(host, examplePath: path, with: template, possibleValues: possibleValues)
         let isMethodMached: Bool = matchMethod(with: apiRequest)
         let isHeaderMatched: Bool = matchHeader(with: apiRequest, ignoreHeaders: ignoreHeaders)
         let isBodyMatched: Bool = matchBody(with: apiRequest)
@@ -235,13 +238,16 @@ class HTTPMockServer {
         }
         
         let response: ((HttpRequest) -> HttpResponse?) = {r in
-            return r.match(with: definition, ignoreHeaders: ignoreHeaders)
+            
+            let response: HttpResponse = r.match(with: definition, ignoreHeaders: ignoreHeaders)
+            
+            return response
         }
         
         server.middleware.append(response)
         
         
-        try server.start(port)
+        try server.start(port, priority: DispatchQoS.QoSClass.utility)
     }
     
     func stop() {

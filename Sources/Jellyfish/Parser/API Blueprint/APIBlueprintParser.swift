@@ -213,11 +213,13 @@ enum APIBlueprintParserError: Error {
 }
 
 public class APIBlueprintParser: APIParser {
+    
     public init() {
         
     }
     
     public func parse(content: String, completion: @escaping APIParserHandler) {
+        
         ObjectiveDrafter().parseDocument(inJS: content, completion: { result in
             completion(ParserResult.success(APIDefinition(title: result.title(),
                                                           host: result.host(),

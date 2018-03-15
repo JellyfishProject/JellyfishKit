@@ -14,7 +14,7 @@ public enum JellyfishLogLevel: Int {
     case verbose = 0, debug, error, none
 }
 
-internal struct JellfishLogger {
+internal struct JellyfishLogger {
     static func log(_ message: String, _ logLevel: JellyfishLogLevel) {
         if logLevel.rawValue >= Jellyfish.logLevel.rawValue {
             print(message)

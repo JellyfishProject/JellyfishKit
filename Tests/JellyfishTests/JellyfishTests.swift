@@ -17,6 +17,7 @@ class JellyfishTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        Jellyfish.logLevel = .verbose
     }
     
     override func tearDown() {
@@ -28,6 +29,10 @@ class JellyfishTests: XCTestCase {
     
     func testMetadata() {
         XCTAssertEqual(Jellyfish.version, "0.0.1")
+    }
+    
+    func testCache() {
+        
     }
     
     func testJellyfish_notFound() {

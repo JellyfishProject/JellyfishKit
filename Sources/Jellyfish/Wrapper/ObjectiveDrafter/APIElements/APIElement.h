@@ -23,4 +23,6 @@
 @property (nonatomic, strong, readonly, nullable) NSString *contentString;
 @property (nonatomic, strong, readonly, nullable) NSDictionary<NSString *, APIElement *> *contentDictionary;
 
+@property (nonatomic, strong) NSDictionary *dictionary;
+
 @end

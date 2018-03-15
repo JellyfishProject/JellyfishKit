@@ -17,8 +17,6 @@ NSString *const kAttributes = @"attributes";
 
 @interface APIElement()
 
-@property (nonatomic, strong) NSDictionary *dictionary;
-
 @end
 
 @implementation APIElement

@@ -357,7 +357,7 @@ class MockServerTests: XCTestCase {
         wait(for: [expectation], timeout: 30.0)
     }
     
-    func testMockFallback() {
+    func testMockFallback_subresources() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
                                                          host: "http://localhost:\(port)",
             resources: [APIResource(
@@ -376,11 +376,27 @@ class MockServerTests: XCTestCase {
                         body: "Hello World!".data(using: .utf8)!
                         )]
                     )]
+                ),APIResource(
+                    path: "/hello/message",
+                    examples:[APIExample(
+                        pathParams: [:],
+                        queryParams: [:],
+                        requests: [APIRequest(
+                            headers: nil,
+                            body: nil,
+                            method: .GET
+                            )],
+                        responses: [APIResponse(
+                            headers: nil,
+                            responseCode: 200,
+                            body: "Hello World in message!".data(using: .utf8)!
+                            )]
+                        )]
                 )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
             try sut.start(with: apiDefinition)
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello?q=fallback")!)
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello/message?q=fallback")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
                     XCTFail("\(error)")
@@ -396,7 +412,7 @@ class MockServerTests: XCTestCase {
                 
                 let str: String = String(data: data, encoding: .utf8)!
                 
-                XCTAssert(str == "Hello World!", "\(str) is incorrect")
+                XCTAssert(str == "Hello World in message!", "\(str) is incorrect")
                 
                 expectation.fulfill()
             }
