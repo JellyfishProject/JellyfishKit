@@ -14,9 +14,15 @@ class JellyfishTests: XCTestCase {
     
     var sut: Jellyfish = Jellyfish()
     
+    var port: in_port_t = 8080
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        while !(checkTcpPortForListen(port: self.port)) {
+            port = in_port_t(arc4random_uniform(16383) + 49152)
+        }
+        
         Jellyfish.logLevel = .verbose
     }
     
@@ -36,7 +42,7 @@ class JellyfishTests: XCTestCase {
     }
     
     func testJellyfish_notFound() {
-        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_normal_blueprint", ofType: "apib")!, port: 8081)
+        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_normal_blueprint", ofType: "apib")!, port: port)
         
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/notFound")!)
@@ -70,7 +76,7 @@ class JellyfishTests: XCTestCase {
     }
     
     func testJellyfish_example1() {
-        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_normal_blueprint", ofType: "apib")!, port: 8082) { error in
+        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_normal_blueprint", ofType: "apib")!, port: port) { error in
             XCTFail("\(error)")
         }
         
@@ -106,7 +112,7 @@ class JellyfishTests: XCTestCase {
     }
     
     func testJellyfish_example2() {
-        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "long_blueprint", ofType: "apib")!, port: 8083) { error in
+        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "long_blueprint", ofType: "apib")!, port: port) { error in
             XCTFail("\(error)")
         }
         
@@ -154,7 +160,7 @@ class JellyfishTests: XCTestCase {
     
     
     func testJellyfish_ignoreHeader() {
-        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "test_ignore", ofType: "apib")!, ignoreHeaders: ["udid"], port: 8084) { error in
+        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "test_ignore", ofType: "apib")!, ignoreHeaders: ["udid"], port: port) { error in
             XCTFail("\(error)")
         }
         
