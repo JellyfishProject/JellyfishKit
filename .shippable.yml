@@ -1,0 +1,9 @@
+language: ruby
+install:
+  - bundle install
+  - bundle update
+script:
+  - bundle exec fastlane macos unit_test
+notifications:
+  email: true
+sudo: required
