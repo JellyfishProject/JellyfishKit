@@ -1,6 +1,6 @@
 # [WIP] Jellyfish
 
-[![Build Status](https://travis-ci.org/darkcl/Jellyfish.svg?branch=master)](https://travis-ci.org/darkcl/Jellyfish) [![codecov](https://codecov.io/gh/darkcl/Jellyfish/branch/master/graph/badge.svg)](https://codecov.io/gh/darkcl/Jellyfish)
+[![Build Status](https://travis-ci.org/JellyfishProject/JellyfishKit.svg?branch=master)](https://travis-ci.org/JellyfishProject/JellyfishKit) [![codecov](https://codecov.io/gh/JellyfishProject/JellyfishKit/branch/master/graph/badge.svg)](https://codecov.io/gh/JellyfishProject/JellyfishKit)
 
 ## What is this?
 
