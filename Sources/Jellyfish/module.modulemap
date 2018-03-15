@@ -1,0 +1,11 @@
+
+framework module Jellyfish {
+    umbrella header "Jellyfish.h"
+    
+    header "ObjectiveDrafter.h"
+    header "APIElement.h"
+    header "APIMeta.h"
+    
+    export *
+    module * { export * }
+}

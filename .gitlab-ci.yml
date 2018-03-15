@@ -1,0 +1,23 @@
+iOS Tests:
+  stage: test
+  before_script:
+    - bundle install
+  script:
+    - bundle exec fastlane ios unit_test
+  artifacts:
+    paths:
+      - xcov_output
+  tags:
+    - ios
+
+macOS Tests:
+  stage: test
+  before_script:
+    - bundle install
+  script:
+    - bundle exec fastlane mac unit_test
+  artifacts:
+    paths:
+      - xcov_output
+  tags:
+    - ios

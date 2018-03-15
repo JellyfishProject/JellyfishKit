@@ -1,0 +1,3 @@
+ignore:
+  - "ext/"  # ignore folders and all its contents
+  - "Tests/"

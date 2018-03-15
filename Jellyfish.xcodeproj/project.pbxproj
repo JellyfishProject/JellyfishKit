@@ -1,0 +1,1057 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52D6D9871BEFF229002C0205 /* Jellyfish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Jellyfish.framework */; };
+		741C29402056B0BA00050882 /* Jellyfish.h in Headers */ = {isa = PBXBuildFile; fileRef = DD808CEF20562362002380DD /* Jellyfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		741C29412056B0BA00050882 /* Jellyfish.h in Headers */ = {isa = PBXBuildFile; fileRef = DD808CEF20562362002380DD /* Jellyfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74251FF1204EDCF70086D264 /* Jellyfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74251FF0204EDCF70086D264 /* Jellyfish.swift */; };
+		74251FF2204EDCF70086D264 /* Jellyfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74251FF0204EDCF70086D264 /* Jellyfish.swift */; };
+		749476032052DB6D009714B2 /* APIBlueprintParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749476022052DB6D009714B2 /* APIBlueprintParser.swift */; };
+		749476042052DB6D009714B2 /* APIBlueprintParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749476022052DB6D009714B2 /* APIBlueprintParser.swift */; };
+		7494761620542C5C009714B2 /* APIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7494761420542C5C009714B2 /* APIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7494761720542C5C009714B2 /* APIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7494761420542C5C009714B2 /* APIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7494761820542C5C009714B2 /* APIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494761520542C5C009714B2 /* APIElement.m */; };
+		7494761920542C5C009714B2 /* APIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494761520542C5C009714B2 /* APIElement.m */; };
+		74947622205431CF009714B2 /* APIMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 74947620205431CF009714B2 /* APIMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74947623205431CF009714B2 /* APIMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 74947620205431CF009714B2 /* APIMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74947624205431CF009714B2 /* APIMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 74947621205431CF009714B2 /* APIMeta.m */; };
+		74947625205431CF009714B2 /* APIMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 74947621205431CF009714B2 /* APIMeta.m */; };
+		74959A1B205959B400FCC2E1 /* Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74959A1A205959B400FCC2E1 /* Swizzling.swift */; };
+		74959A1C205959B400FCC2E1 /* Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74959A1A205959B400FCC2E1 /* Swizzling.swift */; };
+		8933C78F1EB5B82C000D00A4 /* JellyfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */; };
+		8933C7901EB5B82D000D00A4 /* JellyfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */; };
+		DD6613992051280800F08198 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6613982051280800F08198 /* Parser.swift */; };
+		DD66139B205128F700F08198 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66139A205128F700F08198 /* Models.swift */; };
+		DD66139C205128F700F08198 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66139A205128F700F08198 /* Models.swift */; };
+		DD66139D20512A3200F08198 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6613982051280800F08198 /* Parser.swift */; };
+		DD7502881C68FEDE006590AF /* Jellyfish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Jellyfish.framework */; };
+		DD808CA420526715002380DD /* long_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = DD808CA320526715002380DD /* long_blueprint.apib */; };
+		DD808CA520526715002380DD /* long_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = DD808CA320526715002380DD /* long_blueprint.apib */; };
+		DDDA5B57205122F6008BE17F /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B56205122F6008BE17F /* ParserTests.swift */; };
+		DDDA5B58205122F6008BE17F /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B56205122F6008BE17F /* ParserTests.swift */; };
+		DDDA5B5A20512304008BE17F /* MockServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B5920512304008BE17F /* MockServerTests.swift */; };
+		DDDA5B5B20512304008BE17F /* MockServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B5920512304008BE17F /* MockServerTests.swift */; };
+		DDDA5B5E20512343008BE17F /* testing_normal_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = DDDA5B5D20512343008BE17F /* testing_normal_blueprint.apib */; };
+		DDDA5B5F20512343008BE17F /* testing_normal_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = DDDA5B5D20512343008BE17F /* testing_normal_blueprint.apib */; };
+		DDDA5B622051257D008BE17F /* ObjectiveDrafter.h in Headers */ = {isa = PBXBuildFile; fileRef = DDDA5B602051257D008BE17F /* ObjectiveDrafter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDDA5B632051257D008BE17F /* ObjectiveDrafter.h in Headers */ = {isa = PBXBuildFile; fileRef = DDDA5B602051257D008BE17F /* ObjectiveDrafter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDDA5B642051257D008BE17F /* ObjectiveDrafter.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B612051257D008BE17F /* ObjectiveDrafter.m */; };
+		DDDA5B652051257D008BE17F /* ObjectiveDrafter.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDA5B612051257D008BE17F /* ObjectiveDrafter.m */; };
+		DDF50B1520566230001FE792 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF50B11205661E0001FE792 /* JavaScriptCore.framework */; };
+		DDF50B1620566237001FE792 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF50B10205661D7001FE792 /* JavaScriptCore.framework */; };
+		DDF50B1B20566BDD001FE792 /* drafter.js in Resources */ = {isa = PBXBuildFile; fileRef = DDF50B1A20566BDD001FE792 /* drafter.js */; };
+		DDF50B1C20566BDD001FE792 /* drafter.js in Resources */ = {isa = PBXBuildFile; fileRef = DDF50B1A20566BDD001FE792 /* drafter.js */; };
+		DDF50B3620577A24001FE792 /* DemoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2320577A23001FE792 /* DemoServer.swift */; };
+		DDF50B3720577A24001FE792 /* DemoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2320577A23001FE792 /* DemoServer.swift */; };
+		DDF50B3820577A24001FE792 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2420577A23001FE792 /* Errno.swift */; };
+		DDF50B3920577A24001FE792 /* Errno.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2420577A23001FE792 /* Errno.swift */; };
+		DDF50B3A20577A24001FE792 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2520577A23001FE792 /* Files.swift */; };
+		DDF50B3B20577A24001FE792 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2520577A23001FE792 /* Files.swift */; };
+		DDF50B3C20577A24001FE792 /* HttpParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2620577A23001FE792 /* HttpParser.swift */; };
+		DDF50B3D20577A24001FE792 /* HttpParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2620577A23001FE792 /* HttpParser.swift */; };
+		DDF50B3E20577A24001FE792 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2720577A23001FE792 /* HttpRequest.swift */; };
+		DDF50B3F20577A24001FE792 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2720577A23001FE792 /* HttpRequest.swift */; };
+		DDF50B4020577A24001FE792 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2820577A23001FE792 /* HttpResponse.swift */; };
+		DDF50B4120577A24001FE792 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2820577A23001FE792 /* HttpResponse.swift */; };
+		DDF50B4220577A24001FE792 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2920577A23001FE792 /* HttpRouter.swift */; };
+		DDF50B4320577A24001FE792 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2920577A23001FE792 /* HttpRouter.swift */; };
+		DDF50B4420577A24001FE792 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2A20577A23001FE792 /* HttpServer.swift */; };
+		DDF50B4520577A24001FE792 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2A20577A23001FE792 /* HttpServer.swift */; };
+		DDF50B4620577A24001FE792 /* HttpServerIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2B20577A23001FE792 /* HttpServerIO.swift */; };
+		DDF50B4720577A24001FE792 /* HttpServerIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2B20577A23001FE792 /* HttpServerIO.swift */; };
+		DDF50B4820577A24001FE792 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2C20577A23001FE792 /* Process.swift */; };
+		DDF50B4920577A24001FE792 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2C20577A23001FE792 /* Process.swift */; };
+		DDF50B4A20577A24001FE792 /* Scopes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2D20577A23001FE792 /* Scopes.swift */; };
+		DDF50B4B20577A24001FE792 /* Scopes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2D20577A23001FE792 /* Scopes.swift */; };
+		DDF50B4C20577A24001FE792 /* Socket+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2E20577A23001FE792 /* Socket+File.swift */; };
+		DDF50B4D20577A24001FE792 /* Socket+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2E20577A23001FE792 /* Socket+File.swift */; };
+		DDF50B4E20577A24001FE792 /* Socket+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2F20577A23001FE792 /* Socket+Server.swift */; };
+		DDF50B4F20577A24001FE792 /* Socket+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B2F20577A23001FE792 /* Socket+Server.swift */; };
+		DDF50B5020577A24001FE792 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3020577A23001FE792 /* Socket.swift */; };
+		DDF50B5120577A24001FE792 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3020577A23001FE792 /* Socket.swift */; };
+		DDF50B5220577A24001FE792 /* String+BASE64.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3120577A23001FE792 /* String+BASE64.swift */; };
+		DDF50B5320577A24001FE792 /* String+BASE64.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3120577A23001FE792 /* String+BASE64.swift */; };
+		DDF50B5420577A24001FE792 /* String+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3220577A23001FE792 /* String+File.swift */; };
+		DDF50B5520577A24001FE792 /* String+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3220577A23001FE792 /* String+File.swift */; };
+		DDF50B5620577A24001FE792 /* String+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3320577A23001FE792 /* String+Misc.swift */; };
+		DDF50B5720577A24001FE792 /* String+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3320577A23001FE792 /* String+Misc.swift */; };
+		DDF50B5820577A24001FE792 /* String+SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3420577A23001FE792 /* String+SHA1.swift */; };
+		DDF50B5920577A24001FE792 /* String+SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3420577A23001FE792 /* String+SHA1.swift */; };
+		DDF50B5A20577A24001FE792 /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3520577A23001FE792 /* WebSockets.swift */; };
+		DDF50B5B20577A24001FE792 /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B3520577A23001FE792 /* WebSockets.swift */; };
+		DDF50B5E20577B9F001FE792 /* HTTPMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B5D20577B9F001FE792 /* HTTPMock.swift */; };
+		DDF50B5F20577B9F001FE792 /* HTTPMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B5D20577B9F001FE792 /* HTTPMock.swift */; };
+		DDF50B6620577FEF001FE792 /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6520577FEF001FE792 /* URITemplate.swift */; };
+		DDF50B6720577FEF001FE792 /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6520577FEF001FE792 /* URITemplate.swift */; };
+		DDF50B6A20578916001FE792 /* WebRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6920578916001FE792 /* WebRequestHelper.swift */; };
+		DDF50B6B20578916001FE792 /* WebRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6920578916001FE792 /* WebRequestHelper.swift */; };
+		DDF50B6D2057C65B001FE792 /* HTTPStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6C2057C65B001FE792 /* HTTPStub.swift */; };
+		DDF50B6E2057C65B001FE792 /* HTTPStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6C2057C65B001FE792 /* HTTPStub.swift */; };
+		DDF50B702057CDFD001FE792 /* StubbingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6F2057CDFD001FE792 /* StubbingTests.swift */; };
+		DDF50B712057CDFD001FE792 /* StubbingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF50B6F2057CDFD001FE792 /* StubbingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = Jellyfish;
+		};
+		DD7502801C68FCFC006590AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6DA0E1BF000BD002C0205;
+			remoteInfo = "Jellyfish-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52D6D97C1BEFF229002C0205 /* Jellyfish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jellyfish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D6D9861BEFF229002C0205 /* Jellyfish-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jellyfish-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D6DA0F1BF000BD002C0205 /* Jellyfish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jellyfish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		741C292A2056ADC000050882 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		74251FF0204EDCF70086D264 /* Jellyfish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jellyfish.swift; sourceTree = "<group>"; };
+		749476022052DB6D009714B2 /* APIBlueprintParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBlueprintParser.swift; sourceTree = "<group>"; };
+		7494761420542C5C009714B2 /* APIElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIElement.h; sourceTree = "<group>"; };
+		7494761520542C5C009714B2 /* APIElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIElement.m; sourceTree = "<group>"; };
+		74947620205431CF009714B2 /* APIMeta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIMeta.h; sourceTree = "<group>"; };
+		74947621205431CF009714B2 /* APIMeta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIMeta.m; sourceTree = "<group>"; };
+		74959A1A205959B400FCC2E1 /* Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swizzling.swift; sourceTree = "<group>"; };
+		8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JellyfishTests.swift; sourceTree = "<group>"; };
+		AD2FAA261CD0B6D800659CF4 /* Jellyfish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Jellyfish.plist; sourceTree = "<group>"; };
+		AD2FAA281CD0B6E100659CF4 /* JellyfishTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JellyfishTests.plist; sourceTree = "<group>"; };
+		DD6613982051280800F08198 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DD66139A205128F700F08198 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DD75027A1C68FCFC006590AF /* Jellyfish-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jellyfish-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD808CA320526715002380DD /* long_blueprint.apib */ = {isa = PBXFileReference; lastKnownFileType = text; path = long_blueprint.apib; sourceTree = "<group>"; };
+		DD808CEF20562362002380DD /* Jellyfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Jellyfish.h; sourceTree = "<group>"; };
+		DDDA5B56205122F6008BE17F /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		DDDA5B5920512304008BE17F /* MockServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServerTests.swift; sourceTree = "<group>"; };
+		DDDA5B5D20512343008BE17F /* testing_normal_blueprint.apib */ = {isa = PBXFileReference; lastKnownFileType = text; path = testing_normal_blueprint.apib; sourceTree = "<group>"; };
+		DDDA5B602051257D008BE17F /* ObjectiveDrafter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectiveDrafter.h; sourceTree = "<group>"; };
+		DDDA5B612051257D008BE17F /* ObjectiveDrafter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveDrafter.m; sourceTree = "<group>"; };
+		DDF50B10205661D7001FE792 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		DDF50B11205661E0001FE792 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		DDF50B1A20566BDD001FE792 /* drafter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = drafter.js; sourceTree = "<group>"; };
+		DDF50B2320577A23001FE792 /* DemoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoServer.swift; sourceTree = "<group>"; };
+		DDF50B2420577A23001FE792 /* Errno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errno.swift; sourceTree = "<group>"; };
+		DDF50B2520577A23001FE792 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		DDF50B2620577A23001FE792 /* HttpParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpParser.swift; sourceTree = "<group>"; };
+		DDF50B2720577A23001FE792 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		DDF50B2820577A23001FE792 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		DDF50B2920577A23001FE792 /* HttpRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRouter.swift; sourceTree = "<group>"; };
+		DDF50B2A20577A23001FE792 /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
+		DDF50B2B20577A23001FE792 /* HttpServerIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServerIO.swift; sourceTree = "<group>"; };
+		DDF50B2C20577A23001FE792 /* Process.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		DDF50B2D20577A23001FE792 /* Scopes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scopes.swift; sourceTree = "<group>"; };
+		DDF50B2E20577A23001FE792 /* Socket+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Socket+File.swift"; sourceTree = "<group>"; };
+		DDF50B2F20577A23001FE792 /* Socket+Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Socket+Server.swift"; sourceTree = "<group>"; };
+		DDF50B3020577A23001FE792 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		DDF50B3120577A23001FE792 /* String+BASE64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BASE64.swift"; sourceTree = "<group>"; };
+		DDF50B3220577A23001FE792 /* String+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+File.swift"; sourceTree = "<group>"; };
+		DDF50B3320577A23001FE792 /* String+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Misc.swift"; sourceTree = "<group>"; };
+		DDF50B3420577A23001FE792 /* String+SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SHA1.swift"; sourceTree = "<group>"; };
+		DDF50B3520577A23001FE792 /* WebSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSockets.swift; sourceTree = "<group>"; };
+		DDF50B5D20577B9F001FE792 /* HTTPMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMock.swift; sourceTree = "<group>"; };
+		DDF50B6520577FEF001FE792 /* URITemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URITemplate.swift; sourceTree = "<group>"; };
+		DDF50B6920578916001FE792 /* WebRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestHelper.swift; sourceTree = "<group>"; };
+		DDF50B6C2057C65B001FE792 /* HTTPStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStub.swift; sourceTree = "<group>"; };
+		DDF50B6F2057CDFD001FE792 /* StubbingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52D6D9781BEFF229002C0205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B1620566237001FE792 /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6D9831BEFF229002C0205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D6D9871BEFF229002C0205 /* Jellyfish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6DA0B1BF000BD002C0205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B1520566230001FE792 /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7502771C68FCFC006590AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7502881C68FEDE006590AF /* Jellyfish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52D6D9721BEFF229002C0205 = {
+			isa = PBXGroup;
+			children = (
+				8933C7811EB5B7E0000D00A4 /* Sources */,
+				8933C7831EB5B7EB000D00A4 /* Tests */,
+				52D6D99C1BEFF38C002C0205 /* Configs */,
+				52D6D97D1BEFF229002C0205 /* Products */,
+				DDF50B0F205661D7001FE792 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52D6D97D1BEFF229002C0205 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52D6D97C1BEFF229002C0205 /* Jellyfish.framework */,
+				52D6D9861BEFF229002C0205 /* Jellyfish-iOS Tests.xctest */,
+				52D6DA0F1BF000BD002C0205 /* Jellyfish.framework */,
+				DD75027A1C68FCFC006590AF /* Jellyfish-macOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52D6D99C1BEFF38C002C0205 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				DD7502721C68FC1B006590AF /* Frameworks */,
+				DD7502731C68FC20006590AF /* Tests */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		74251FEF204EDCF70086D264 /* Jellyfish */ = {
+			isa = PBXGroup;
+			children = (
+				DD808CEF20562362002380DD /* Jellyfish.h */,
+				741C292A2056ADC000050882 /* module.modulemap */,
+				74251FF0204EDCF70086D264 /* Jellyfish.swift */,
+				DDF50B5C20577B52001FE792 /* Server */,
+				DDDA5B6620512586008BE17F /* Wrapper */,
+				749475E52052DAF9009714B2 /* Parser */,
+				DD66139A205128F700F08198 /* Models.swift */,
+			);
+			path = Jellyfish;
+			sourceTree = "<group>";
+		};
+		749475E52052DAF9009714B2 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				749475E62052DB06009714B2 /* API Blueprint */,
+				DD6613982051280800F08198 /* Parser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		749475E62052DB06009714B2 /* API Blueprint */ = {
+			isa = PBXGroup;
+			children = (
+				749476022052DB6D009714B2 /* APIBlueprintParser.swift */,
+			);
+			path = "API Blueprint";
+			sourceTree = "<group>";
+		};
+		7494761320542BD2009714B2 /* APIElements */ = {
+			isa = PBXGroup;
+			children = (
+				7494761420542C5C009714B2 /* APIElement.h */,
+				7494761520542C5C009714B2 /* APIElement.m */,
+				74947620205431CF009714B2 /* APIMeta.h */,
+				74947621205431CF009714B2 /* APIMeta.m */,
+			);
+			path = APIElements;
+			sourceTree = "<group>";
+		};
+		8933C7811EB5B7E0000D00A4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B6420577FEF001FE792 /* URITemplate */,
+				DDF50B2220577A23001FE792 /* swifter */,
+				74251FEF204EDCF70086D264 /* Jellyfish */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8933C7831EB5B7EB000D00A4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B68205788FB001FE792 /* Helper */,
+				DDDA5B5C20512314008BE17F /* Resources */,
+				8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */,
+				DDDA5B56205122F6008BE17F /* ParserTests.swift */,
+				DDDA5B5920512304008BE17F /* MockServerTests.swift */,
+				DDF50B6F2057CDFD001FE792 /* StubbingTests.swift */,
+			);
+			name = Tests;
+			path = Tests/JellyfishTests;
+			sourceTree = "<group>";
+		};
+		DD6613A82052283F00F08198 /* ObjectiveDrafter */ = {
+			isa = PBXGroup;
+			children = (
+				7494761320542BD2009714B2 /* APIElements */,
+				DDDA5B602051257D008BE17F /* ObjectiveDrafter.h */,
+				DDDA5B612051257D008BE17F /* ObjectiveDrafter.m */,
+			);
+			path = ObjectiveDrafter;
+			sourceTree = "<group>";
+		};
+		DD7502721C68FC1B006590AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD2FAA261CD0B6D800659CF4 /* Jellyfish.plist */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD7502731C68FC20006590AF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AD2FAA281CD0B6E100659CF4 /* JellyfishTests.plist */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		DDDA5B5C20512314008BE17F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDDA5B5D20512343008BE17F /* testing_normal_blueprint.apib */,
+				DD808CA320526715002380DD /* long_blueprint.apib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DDDA5B6620512586008BE17F /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B1A20566BDD001FE792 /* drafter.js */,
+				DD6613A82052283F00F08198 /* ObjectiveDrafter */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
+		DDF50B0F205661D7001FE792 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B11205661E0001FE792 /* JavaScriptCore.framework */,
+				DDF50B10205661D7001FE792 /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDF50B2220577A23001FE792 /* swifter */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B2320577A23001FE792 /* DemoServer.swift */,
+				DDF50B2420577A23001FE792 /* Errno.swift */,
+				DDF50B2520577A23001FE792 /* Files.swift */,
+				DDF50B2620577A23001FE792 /* HttpParser.swift */,
+				DDF50B2720577A23001FE792 /* HttpRequest.swift */,
+				DDF50B2820577A23001FE792 /* HttpResponse.swift */,
+				DDF50B2920577A23001FE792 /* HttpRouter.swift */,
+				DDF50B2A20577A23001FE792 /* HttpServer.swift */,
+				DDF50B2B20577A23001FE792 /* HttpServerIO.swift */,
+				DDF50B2C20577A23001FE792 /* Process.swift */,
+				DDF50B2D20577A23001FE792 /* Scopes.swift */,
+				DDF50B2E20577A23001FE792 /* Socket+File.swift */,
+				DDF50B2F20577A23001FE792 /* Socket+Server.swift */,
+				DDF50B3020577A23001FE792 /* Socket.swift */,
+				DDF50B3120577A23001FE792 /* String+BASE64.swift */,
+				DDF50B3220577A23001FE792 /* String+File.swift */,
+				DDF50B3320577A23001FE792 /* String+Misc.swift */,
+				DDF50B3420577A23001FE792 /* String+SHA1.swift */,
+				DDF50B3520577A23001FE792 /* WebSockets.swift */,
+			);
+			name = swifter;
+			path = ext/swifter;
+			sourceTree = SOURCE_ROOT;
+		};
+		DDF50B5C20577B52001FE792 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B5D20577B9F001FE792 /* HTTPMock.swift */,
+				DDF50B6C2057C65B001FE792 /* HTTPStub.swift */,
+				74959A1A205959B400FCC2E1 /* Swizzling.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		DDF50B6420577FEF001FE792 /* URITemplate */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B6520577FEF001FE792 /* URITemplate.swift */,
+			);
+			name = URITemplate;
+			path = ext/URITemplate;
+			sourceTree = SOURCE_ROOT;
+		};
+		DDF50B68205788FB001FE792 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DDF50B6920578916001FE792 /* WebRequestHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		52D6D9791BEFF229002C0205 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741C29402056B0BA00050882 /* Jellyfish.h in Headers */,
+				7494761620542C5C009714B2 /* APIElement.h in Headers */,
+				74947622205431CF009714B2 /* APIMeta.h in Headers */,
+				DDDA5B622051257D008BE17F /* ObjectiveDrafter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6DA0C1BF000BD002C0205 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741C29412056B0BA00050882 /* Jellyfish.h in Headers */,
+				7494761720542C5C009714B2 /* APIElement.h in Headers */,
+				74947623205431CF009714B2 /* APIMeta.h in Headers */,
+				DDDA5B632051257D008BE17F /* ObjectiveDrafter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		52D6D97B1BEFF229002C0205 /* Jellyfish-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-iOS" */;
+			buildPhases = (
+				52D6D9771BEFF229002C0205 /* Sources */,
+				52D6D9781BEFF229002C0205 /* Frameworks */,
+				52D6D9791BEFF229002C0205 /* Headers */,
+				52D6D97A1BEFF229002C0205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jellyfish-iOS";
+			productName = Jellyfish;
+			productReference = 52D6D97C1BEFF229002C0205 /* Jellyfish.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52D6D9851BEFF229002C0205 /* Jellyfish-iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52D6D9931BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-iOS Tests" */;
+			buildPhases = (
+				52D6D9821BEFF229002C0205 /* Sources */,
+				52D6D9831BEFF229002C0205 /* Frameworks */,
+				52D6D9841BEFF229002C0205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52D6D9891BEFF229002C0205 /* PBXTargetDependency */,
+			);
+			name = "Jellyfish-iOS Tests";
+			productName = JellyfishTests;
+			productReference = 52D6D9861BEFF229002C0205 /* Jellyfish-iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52D6DA0E1BF000BD002C0205 /* Jellyfish-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52D6DA201BF000BD002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-macOS" */;
+			buildPhases = (
+				52D6DA0A1BF000BD002C0205 /* Sources */,
+				52D6DA0B1BF000BD002C0205 /* Frameworks */,
+				52D6DA0C1BF000BD002C0205 /* Headers */,
+				52D6DA0D1BF000BD002C0205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jellyfish-macOS";
+			productName = "Jellyfish-macOS";
+			productReference = 52D6DA0F1BF000BD002C0205 /* Jellyfish.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD7502791C68FCFC006590AF /* Jellyfish-macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7502821C68FCFC006590AF /* Build configuration list for PBXNativeTarget "Jellyfish-macOS Tests" */;
+			buildPhases = (
+				DD7502761C68FCFC006590AF /* Sources */,
+				DD7502771C68FCFC006590AF /* Frameworks */,
+				DD7502781C68FCFC006590AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD7502811C68FCFC006590AF /* PBXTargetDependency */,
+			);
+			name = "Jellyfish-macOS Tests";
+			productName = "Jellyfish-OS Tests";
+			productReference = DD75027A1C68FCFC006590AF /* Jellyfish-macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52D6D9731BEFF229002C0205 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Jellyfish;
+				TargetAttributes = {
+					52D6D97B1BEFF229002C0205 = {
+						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					52D6D9851BEFF229002C0205 = {
+						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
+					};
+					52D6DA0E1BF000BD002C0205 = {
+						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0920;
+					};
+					DD7502791C68FCFC006590AF = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 52D6D9761BEFF229002C0205 /* Build configuration list for PBXProject "Jellyfish" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52D6D9721BEFF229002C0205;
+			productRefGroup = 52D6D97D1BEFF229002C0205 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52D6D97B1BEFF229002C0205 /* Jellyfish-iOS */,
+				52D6DA0E1BF000BD002C0205 /* Jellyfish-macOS */,
+				52D6D9851BEFF229002C0205 /* Jellyfish-iOS Tests */,
+				DD7502791C68FCFC006590AF /* Jellyfish-macOS Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52D6D97A1BEFF229002C0205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B1B20566BDD001FE792 /* drafter.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6D9841BEFF229002C0205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDDA5B5E20512343008BE17F /* testing_normal_blueprint.apib in Resources */,
+				DD808CA420526715002380DD /* long_blueprint.apib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6DA0D1BF000BD002C0205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B1C20566BDD001FE792 /* drafter.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7502781C68FCFC006590AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDDA5B5F20512343008BE17F /* testing_normal_blueprint.apib in Resources */,
+				DD808CA520526715002380DD /* long_blueprint.apib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52D6D9771BEFF229002C0205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6613992051280800F08198 /* Parser.swift in Sources */,
+				74251FF1204EDCF70086D264 /* Jellyfish.swift in Sources */,
+				DDF50B4420577A24001FE792 /* HttpServer.swift in Sources */,
+				DDF50B5820577A24001FE792 /* String+SHA1.swift in Sources */,
+				DDF50B5220577A24001FE792 /* String+BASE64.swift in Sources */,
+				DDDA5B642051257D008BE17F /* ObjectiveDrafter.m in Sources */,
+				DDF50B6D2057C65B001FE792 /* HTTPStub.swift in Sources */,
+				DDF50B5E20577B9F001FE792 /* HTTPMock.swift in Sources */,
+				DDF50B5420577A24001FE792 /* String+File.swift in Sources */,
+				DDF50B4020577A24001FE792 /* HttpResponse.swift in Sources */,
+				749476032052DB6D009714B2 /* APIBlueprintParser.swift in Sources */,
+				DDF50B4A20577A24001FE792 /* Scopes.swift in Sources */,
+				DDF50B3C20577A24001FE792 /* HttpParser.swift in Sources */,
+				DDF50B6620577FEF001FE792 /* URITemplate.swift in Sources */,
+				DDF50B5620577A24001FE792 /* String+Misc.swift in Sources */,
+				DDF50B5020577A24001FE792 /* Socket.swift in Sources */,
+				DDF50B4820577A24001FE792 /* Process.swift in Sources */,
+				DDF50B4220577A24001FE792 /* HttpRouter.swift in Sources */,
+				DDF50B3E20577A24001FE792 /* HttpRequest.swift in Sources */,
+				74947624205431CF009714B2 /* APIMeta.m in Sources */,
+				DDF50B5A20577A24001FE792 /* WebSockets.swift in Sources */,
+				DD66139B205128F700F08198 /* Models.swift in Sources */,
+				DDF50B4E20577A24001FE792 /* Socket+Server.swift in Sources */,
+				7494761820542C5C009714B2 /* APIElement.m in Sources */,
+				DDF50B4620577A24001FE792 /* HttpServerIO.swift in Sources */,
+				74959A1B205959B400FCC2E1 /* Swizzling.swift in Sources */,
+				DDF50B3A20577A24001FE792 /* Files.swift in Sources */,
+				DDF50B3820577A24001FE792 /* Errno.swift in Sources */,
+				DDF50B3620577A24001FE792 /* DemoServer.swift in Sources */,
+				DDF50B4C20577A24001FE792 /* Socket+File.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6D9821BEFF229002C0205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B6A20578916001FE792 /* WebRequestHelper.swift in Sources */,
+				DDDA5B57205122F6008BE17F /* ParserTests.swift in Sources */,
+				DDDA5B5A20512304008BE17F /* MockServerTests.swift in Sources */,
+				DDF50B702057CDFD001FE792 /* StubbingTests.swift in Sources */,
+				8933C7901EB5B82D000D00A4 /* JellyfishTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D6DA0A1BF000BD002C0205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74251FF2204EDCF70086D264 /* Jellyfish.swift in Sources */,
+				DD66139D20512A3200F08198 /* Parser.swift in Sources */,
+				DDF50B4520577A24001FE792 /* HttpServer.swift in Sources */,
+				DDF50B5920577A24001FE792 /* String+SHA1.swift in Sources */,
+				DDF50B5320577A24001FE792 /* String+BASE64.swift in Sources */,
+				DDDA5B652051257D008BE17F /* ObjectiveDrafter.m in Sources */,
+				DDF50B6E2057C65B001FE792 /* HTTPStub.swift in Sources */,
+				DDF50B5F20577B9F001FE792 /* HTTPMock.swift in Sources */,
+				DDF50B5520577A24001FE792 /* String+File.swift in Sources */,
+				DDF50B4120577A24001FE792 /* HttpResponse.swift in Sources */,
+				749476042052DB6D009714B2 /* APIBlueprintParser.swift in Sources */,
+				DDF50B4B20577A24001FE792 /* Scopes.swift in Sources */,
+				DDF50B3D20577A24001FE792 /* HttpParser.swift in Sources */,
+				DDF50B6720577FEF001FE792 /* URITemplate.swift in Sources */,
+				DDF50B5720577A24001FE792 /* String+Misc.swift in Sources */,
+				DDF50B5120577A24001FE792 /* Socket.swift in Sources */,
+				DDF50B4920577A24001FE792 /* Process.swift in Sources */,
+				DDF50B4320577A24001FE792 /* HttpRouter.swift in Sources */,
+				DDF50B3F20577A24001FE792 /* HttpRequest.swift in Sources */,
+				74947625205431CF009714B2 /* APIMeta.m in Sources */,
+				DDF50B5B20577A24001FE792 /* WebSockets.swift in Sources */,
+				DD66139C205128F700F08198 /* Models.swift in Sources */,
+				DDF50B4F20577A24001FE792 /* Socket+Server.swift in Sources */,
+				7494761920542C5C009714B2 /* APIElement.m in Sources */,
+				DDF50B4720577A24001FE792 /* HttpServerIO.swift in Sources */,
+				74959A1C205959B400FCC2E1 /* Swizzling.swift in Sources */,
+				DDF50B3B20577A24001FE792 /* Files.swift in Sources */,
+				DDF50B3920577A24001FE792 /* Errno.swift in Sources */,
+				DDF50B3720577A24001FE792 /* DemoServer.swift in Sources */,
+				DDF50B4D20577A24001FE792 /* Socket+File.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7502761C68FCFC006590AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF50B6B20578916001FE792 /* WebRequestHelper.swift in Sources */,
+				DDDA5B58205122F6008BE17F /* ParserTests.swift in Sources */,
+				DDDA5B5B20512304008BE17F /* MockServerTests.swift in Sources */,
+				DDF50B712057CDFD001FE792 /* StubbingTests.swift in Sources */,
+				8933C78F1EB5B82C000D00A4 /* JellyfishTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52D6D9891BEFF229002C0205 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6D97B1BEFF229002C0205 /* Jellyfish-iOS */;
+			targetProxy = 52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */;
+		};
+		DD7502811C68FCFC006590AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6DA0E1BF000BD002C0205 /* Jellyfish-macOS */;
+			targetProxy = DD7502801C68FCFC006590AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		52D6D98E1BEFF229002C0205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52D6D98F1BEFF229002C0205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52D6D9911BEFF229002C0205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/Jellyfish.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MODULEMAP_FILE = "${SRCROOT}/Sources/Jellyfish/module.modulemap";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-iOS";
+				PRODUCT_NAME = Jellyfish;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52D6D9921BEFF229002C0205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/Jellyfish.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MODULEMAP_FILE = "${SRCROOT}/Sources/Jellyfish/module.modulemap";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-iOS";
+				PRODUCT_NAME = Jellyfish;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		52D6D9941BEFF229002C0205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/JellyfishTests.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		52D6D9951BEFF229002C0205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/JellyfishTests.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		52D6DA211BF000BD002C0205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Configs/Jellyfish.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "${SRCROOT}/Sources/Jellyfish/module.modulemap";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-macOS";
+				PRODUCT_NAME = Jellyfish;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52D6DA221BF000BD002C0205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Configs/Jellyfish.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "${SRCROOT}/Sources/Jellyfish/module.modulemap";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-macOS";
+				PRODUCT_NAME = Jellyfish;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DD7502831C68FCFC006590AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/JellyfishTests.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		DD7502841C68FCFC006590AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Configs/JellyfishTests.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jellyfish.Jellyfish-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52D6D9761BEFF229002C0205 /* Build configuration list for PBXProject "Jellyfish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D6D98E1BEFF229002C0205 /* Debug */,
+				52D6D98F1BEFF229002C0205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D6D9911BEFF229002C0205 /* Debug */,
+				52D6D9921BEFF229002C0205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52D6D9931BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D6D9941BEFF229002C0205 /* Debug */,
+				52D6D9951BEFF229002C0205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52D6DA201BF000BD002C0205 /* Build configuration list for PBXNativeTarget "Jellyfish-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D6DA211BF000BD002C0205 /* Debug */,
+				52D6DA221BF000BD002C0205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7502821C68FCFC006590AF /* Build configuration list for PBXNativeTarget "Jellyfish-macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7502831C68FCFC006590AF /* Debug */,
+				DD7502841C68FCFC006590AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52D6D9731BEFF229002C0205 /* Project object */;
+}
