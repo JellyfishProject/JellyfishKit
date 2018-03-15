@@ -356,6 +356,57 @@ class MockServerTests: XCTestCase {
         
         wait(for: [expectation], timeout: 30.0)
     }
+    
+    func testMockFallback() {
+        let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
+                                                         host: "http://localhost:\(port)",
+            resources: [APIResource(
+                path: "/hello",
+                examples:[APIExample(
+                    pathParams: [:],
+                    queryParams: [:],
+                    requests: [APIRequest(
+                        headers: nil,
+                        body: nil,
+                        method: .GET
+                        )],
+                    responses: [APIResponse(
+                        headers: nil,
+                        responseCode: 200,
+                        body: "Hello World!".data(using: .utf8)!
+                        )]
+                    )]
+                )])
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        do{
+            try sut.start(with: apiDefinition)
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello?q=fallback")!)
+            WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
+                if let error = err {
+                    XCTFail("\(error)")
+                }
+                
+                guard let data: Data = data else {
+                    XCTFail("Empty Response")
+                    expectation.fulfill()
+                    return
+                }
+                
+                print(res ?? "No Response")
+                
+                let str: String = String(data: data, encoding: .utf8)!
+                
+                XCTAssert(str == "Hello World!", "\(str) is incorrect")
+                
+                expectation.fulfill()
+            }
+        }catch{
+            XCTFail("\(error)")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30.0)
+    }
 }
 
 // MARK - Helper

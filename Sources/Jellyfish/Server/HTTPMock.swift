@@ -48,11 +48,11 @@ fileprivate extension HttpRequest {
         }
     }
     
-    func matchHeader(with apiRequest: APIRequest)  -> Bool {
+    func matchHeader(with apiRequest: APIRequest, ignoreHeaders: [String])  -> Bool {
         
         if let requestHeader = apiRequest.headers {
             for key: String in requestHeader.keys {
-                if let value: String = self.headers[key] {
+                if let value: String = self.headers[key], !ignoreHeaders.contains(key) {
                     if value != requestHeader[key] {
                         return false
                     }
@@ -90,8 +90,8 @@ fileprivate extension HttpRequest {
         return false
     }
     
-    func mathPath(_ host: String, with template: String, possibleValues: [String: String]?) -> Bool {
-        let template: URITemplate = URITemplate(template: template)
+    func mathPath(_ host: String, with templateString: String, possibleValues: [String: String]?) -> Bool {
+        let template: URITemplate = URITemplate(template: templateString)
         
         if let variables: [String:String] = template.extract(self.path) {
             
@@ -108,13 +108,20 @@ fileprivate extension HttpRequest {
             
             return true
         }else{
-            return false
+            
+            if let loc = self.path.range(of: templateString),
+                loc.lowerBound == self.path.startIndex {
+                return true
+            }else{
+                return false
+            }
+            
         }
     }
     
-    func match(with definition: APIDefinition) -> HttpResponse {
+    func match(with definition: APIDefinition, ignoreHeaders: [String]) -> HttpResponse {
         for res in definition.resources {
-            if let response = match(with: res, host: definition.host) {
+            if let response = match(with: res, host: definition.host, ignoreHeaders: ignoreHeaders) {
                 return response
             }
         }
@@ -122,7 +129,7 @@ fileprivate extension HttpRequest {
         return HttpResponse.notFound
     }
     
-    func match(with res: APIResource, host: String) -> HttpResponse? {
+    func match(with res: APIResource, host: String, ignoreHeaders: [String]) -> HttpResponse? {
         for example in res.examples {
             
             for (i, request) in example.requests.enumerated() {
@@ -131,7 +138,8 @@ fileprivate extension HttpRequest {
                          from: exampleUrl,
                          template: res.path,
                          host: host,
-                         possibleValues: example.pathParams) {
+                         possibleValues: example.pathParams,
+                         ignoreHeaders: ignoreHeaders) {
                     if let response: APIResponse = example.responses[safe: i] {
                         return HttpResponse.raw(response.responseCode ?? 200, "OK", response.headers, { writer in
                             if let data: Data = response.body {
@@ -151,12 +159,13 @@ fileprivate extension HttpRequest {
                from path: String,
                template: String,
                host: String,
-               possibleValues: [String: String]?
+               possibleValues: [String: String]?,
+               ignoreHeaders: [String]
         ) -> Bool {
         
         let isPathMatched: Bool = mathPath(host, with: template, possibleValues: possibleValues)
         let isMethodMached: Bool = matchMethod(with: apiRequest)
-        let isHeaderMatched: Bool = matchHeader(with: apiRequest)
+        let isHeaderMatched: Bool = matchHeader(with: apiRequest, ignoreHeaders: ignoreHeaders)
         let isBodyMatched: Bool = matchBody(with: apiRequest)
         
         return isPathMatched &&
@@ -219,14 +228,14 @@ class HTTPMockServer {
         self.port = port
     }
     
-    func start(with definition: APIDefinition, enableStub: Bool = false) throws {
+    func start(with definition: APIDefinition, enableStub: Bool = false, ignoreHeaders: [String] = []) throws {
         
         if enableStub {
             JellyfishURLProtocol.addStub(from: definition.host, to: "http://localhost:\(port)")
         }
         
         let response: ((HttpRequest) -> HttpResponse?) = {r in
-            return r.match(with: definition)
+            return r.match(with: definition, ignoreHeaders: ignoreHeaders)
         }
         
         server.middleware.append(response)

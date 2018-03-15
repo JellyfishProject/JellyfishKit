@@ -1,0 +1,133 @@
+FORMAT: 1A
+HOST: https://example.com
+
+
+# Login API
+
+Sessions related API
+
+## Create User Session [/sessions]
+
+### Login User [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            udid: device_udid
+
+    + Attributes (object)
+
+        + email: `email@email.com` (string, required)
+        
+            User Email, can be google / facebook or gumtree email
+        
+        + token: `token` (string, required)
+        
+            User access token, can be google or facebook access token or gumtree password
+
+        + type: `email` (string, required)
+        
+            Type of login, can only be email, google or facebook
+    
++ Response 201 (application/json)
+
+    + Body
+    
+            {
+                "meta": {
+                    "status": 201
+                },
+                "contents": {
+                    "userId": "user_id",
+                    "email": "email@email.com",
+                    "token": "user_access_token",
+                    "hashedEmail": "hashed_email",
+                    "hashedUserId": "-1"
+                }
+            }
+            
+
++ Request (application/json)
+
+    When a user with no saved job login, response with empty saved job session
+
+    + Headers
+
+            udid: device_udid
+
+    + Body
+
+            {
+                "email": "empty_save@example.com",
+                "token": "empty_save",
+                "type": "email"
+            }
+            
+
++ Response 201 (application/json)
+
+    + Body
+    
+            {
+                "meta": {
+                    "status": 201
+                },
+                "contents": {
+                    "userId": "empty_save_job_user_id",
+                    "email": "jobseeker004@gmail.com",
+                    "token": "user_access_token",
+                    "hashedEmail": "hashedEmail",
+                    "hashedUserId": "-1"
+                }
+            }
+            
+
++ Request (application/json)
+
+    When a user enter wrong password or email, API will response error message with response code 401
+
+    + Headers
+
+            udid: device_udid
+
+    + Body
+
+            {
+                "email": "failed@user.com",
+                "token": "example",
+                "type": "email"
+            }
+            
+
++ Response 401 (application/json)
+
+    + Body
+    
+            {
+                "meta": {
+                    "status": 401
+                },
+                "error": {
+                    "errors": [
+                        {
+                            "field": "email",
+                            "message": "Email and token does not match",
+                            "type": "ERROR_EMAIL_NOTMATCH"
+                        },
+                        {
+                            "field": "token",
+                            "message": "Email and token does not match",
+                            "type": "ERROR_TOKEN_NOTMATCH"
+                        },
+                        {
+                            "field": "type",
+                            "message": "Email and token does not match",
+                            "type": "ERROR_TYPE_NOTMATCH"
+                        }
+                    ],
+                    "code": 401,
+                    "message": "Login fail",
+                    "type": "ERROR_SESSION_CREATE_FIELDSINVALID"
+                }
+            }
