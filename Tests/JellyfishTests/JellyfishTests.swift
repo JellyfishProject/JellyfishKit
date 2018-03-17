@@ -47,11 +47,6 @@ class JellyfishTests: XCTestCase {
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/notFound")!)
         WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
-            if let error = err {
-                XCTFail("\(error)")
-                expectation.fulfill()
-                return
-            }
             
             guard let response: HTTPURLResponse = res as? HTTPURLResponse else {
                 XCTFail("Empty Response")
