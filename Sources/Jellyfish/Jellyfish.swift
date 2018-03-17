@@ -29,9 +29,12 @@ public class Jellyfish {
     
     var parser: APIParser
     var mockServer: HTTPMockServer = HTTPMockServer()
+    var mappingHost: String = "http://localhost"
     
-    public init(_ parser: APIParser = APIBlueprintParser()) {
+    public init(_ parser: APIParser = APIBlueprintParser(),
+                mappingHost: String = "http://localhost") {
         self.parser = parser
+        self.mappingHost = mappingHost
     }
     
     public func parse(docContent: String, completion: @escaping ((ParserResult<APIDefinition>)->())) {
@@ -66,7 +69,7 @@ public class Jellyfish {
             case .success(let apiDefinition):
                 do{
                     self.mockServer = HTTPMockServer(port)
-                    try self.mockServer.start(with: apiDefinition, enableStub: true, ignoreHeaders: ignoreHeaders)
+                    try self.mockServer.start(with: apiDefinition, enableStub: true, ignoreHeaders: ignoreHeaders, mappingHost: self.mappingHost)
                 }catch{
                     errorHandler?(error)
                 }

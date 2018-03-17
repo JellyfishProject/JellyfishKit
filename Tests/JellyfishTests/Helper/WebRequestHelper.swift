@@ -8,6 +8,14 @@
 
 import Foundation
 
+func testingHost() -> String {
+    if let hostURL = ProcessInfo.processInfo.environment["HOST_URL"] {
+        return hostURL
+    }else{
+        return "http://localhost"
+    }
+}
+
 func checkTcpPortForListen(port: in_port_t) -> Bool{
     
     let socketFileDescriptor = socket(AF_INET, SOCK_STREAM, 0)

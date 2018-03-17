@@ -30,7 +30,7 @@ As in production environment, we can just remove `Jellyfish` and the app should 
 
 ## Dependency
 
-- [Swiftier](https://github.com/httpswift/swifter)
+- [Swifter](https://github.com/httpswift/swifter)
 - [URITemplate](https://github.com/kylef/URITemplate.swift)
 
 ## Usage

@@ -29,7 +29,7 @@ class JellyfishTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut.stop()
-        sut = Jellyfish()
+        sut = Jellyfish(mappingHost: testingHost())
         super.tearDown()
     }
     

@@ -31,7 +31,7 @@ class StubbingTests: XCTestCase {
     }
     
     func testStubbing() {
-        JellyfishURLProtocol.stub["https://google.com"] = "http://localhost:\(port)"
+        JellyfishURLProtocol.stub["https://google.com"] = "\(testingHost()):\(port)"
         
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
                                                          host: "https://google.com",

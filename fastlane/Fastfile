@@ -14,7 +14,10 @@ default_platform(:ios)
 platform :ios do
   desc "Tests for iOS"
   lane :unit_test do
-    scan(scheme: "Jellyfish-iOS")
+    scan(
+      scheme: "Jellyfish-iOS",
+      xcargs: 'HOST_URL="https://0.0.0.0"'
+    )
     codecov_reporter(
       token: "$CODECOV_TOKEN"
     )
@@ -24,7 +27,10 @@ end
 platform :macos do
   desc "Tests for macOS"
   lane :unit_test do
-    scan(scheme: "Jellyfish-macOS")
+    scan(
+      scheme: "Jellyfish-macOS",
+      xcargs: 'HOST_URL="https://0.0.0.0"'
+    )
     codecov_reporter(
       token: "$CODECOV_TOKEN"
     )

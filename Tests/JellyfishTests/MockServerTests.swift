@@ -41,7 +41,7 @@ class MockServerTests: XCTestCase {
                                                          resources: [])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (_ , res , err) in
                 if let error = err {
@@ -92,7 +92,7 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
@@ -156,7 +156,7 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello/2")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
@@ -208,7 +208,7 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello?call=Mr&name=darkcl")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
@@ -259,7 +259,7 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "content-type")
@@ -320,7 +320,7 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
             request.httpMethod = "POST"
             request.setValue("plain/text", forHTTPHeaderField: "content-type")
@@ -395,7 +395,7 @@ class MockServerTests: XCTestCase {
                 )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition)
+            try sut.start(with: apiDefinition, mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello/message?q=fallback")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {

@@ -231,10 +231,10 @@ class HTTPMockServer {
         self.port = port
     }
     
-    func start(with definition: APIDefinition, enableStub: Bool = false, ignoreHeaders: [String] = []) throws {
+    func start(with definition: APIDefinition, enableStub: Bool = false, ignoreHeaders: [String] = [], mappingHost: String = "http://localhost") throws {
         
         if enableStub {
-            JellyfishURLProtocol.addStub(from: definition.host, to: "http://localhost:\(port)")
+            JellyfishURLProtocol.addStub(from: definition.host, to: "\(mappingHost):\(port)")
         }
         
         let response: ((HttpRequest) -> HttpResponse?) = {r in
