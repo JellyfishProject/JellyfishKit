@@ -9,12 +9,14 @@
 import Foundation
 
 func testingHost() -> String {
-    if let hostURL = ProcessInfo.processInfo.environment["HOST_URL"] {
-        print("Host: \(hostURL)")
-        return hostURL
-    }else{
-        return "http://localhost"
-    }
+    return "http://localhost"
+    
+//    if let hostURL = ProcessInfo.processInfo.environment["HOST_URL"] {
+//        print("Host: \(hostURL)")
+//        return hostURL
+//    }else{
+//        return "http://localhost"
+//    }
 }
 
 func checkTcpPortForListen(port: in_port_t) -> Bool{
