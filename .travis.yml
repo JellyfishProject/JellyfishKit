@@ -9,4 +9,6 @@ before_install:
   - bundle update
 
 script:
-  - bundle exec fastlane macos unit_test
+  - bundle exec fastlane ios unit_test
+
+sudo: required
