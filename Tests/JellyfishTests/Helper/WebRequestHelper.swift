@@ -10,6 +10,7 @@ import Foundation
 
 func testingHost() -> String {
     if let hostURL = ProcessInfo.processInfo.environment["HOST_URL"] {
+        print("Host: \(hostURL)")
         return hostURL
     }else{
         return "http://localhost"

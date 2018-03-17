@@ -37,12 +37,12 @@ class MockServerTests: XCTestCase {
     
     func testMockNotFound() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Not found Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (_ , res , err) in
                 if let error = err {
                     XCTFail("\(error)")
@@ -72,7 +72,7 @@ class MockServerTests: XCTestCase {
     
     func testMockSingle() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [APIResource(
                                                             path: "/hello",
                                                             examples:[APIExample(
@@ -92,8 +92,8 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
                     XCTFail("\(error)")
@@ -123,7 +123,7 @@ class MockServerTests: XCTestCase {
     
     func testMockMultipleExamples() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Multiple Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [APIResource(
                                                             path: "/hello/{path}",
                                                             examples:[APIExample(
@@ -156,8 +156,8 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello/2")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello/2")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
                     XCTFail("\(error)")
@@ -188,7 +188,7 @@ class MockServerTests: XCTestCase {
     
     func testMockQuery() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [APIResource(
                                                             path: "/hello{?name,call}",
                                                             examples:[APIExample(
@@ -208,8 +208,8 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello?call=Mr&name=darkcl")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello?call=Mr&name=darkcl")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
                     XCTFail("\(error)")
@@ -239,7 +239,7 @@ class MockServerTests: XCTestCase {
     
     func testMockPostBody_json() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [APIResource(
                                                             path: "/hello",
                                                             examples:[APIExample(
@@ -259,8 +259,8 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "content-type")
             let jsonString: String = """
@@ -300,7 +300,7 @@ class MockServerTests: XCTestCase {
     
     func testMockPostBody_plain() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
                                                          resources: [APIResource(
                                                             path: "/hello",
                                                             examples:[APIExample(
@@ -320,8 +320,8 @@ class MockServerTests: XCTestCase {
                                                             )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
             request.httpMethod = "POST"
             request.setValue("plain/text", forHTTPHeaderField: "content-type")
             let jsonString: String = "Hello World!"
@@ -359,7 +359,7 @@ class MockServerTests: XCTestCase {
     
     func testMockFallback_subresources() {
         let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
-                                                         host: "http://localhost:\(port)",
+                                                         host: "http://example.com",
             resources: [APIResource(
                 path: "/hello",
                 examples:[APIExample(
@@ -395,8 +395,8 @@ class MockServerTests: XCTestCase {
                 )])
         let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
         do{
-            try sut.start(with: apiDefinition, mappingHost: testingHost())
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://localhost:\(port)/hello/message?q=fallback")!)
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello/message?q=fallback")!)
             WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
                 if let error = err {
                     XCTFail("\(error)")

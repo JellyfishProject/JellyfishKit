@@ -16,7 +16,7 @@ platform :ios do
   lane :unit_test do
     scan(
       scheme: "Jellyfish-iOS",
-      xcargs: 'HOST_URL="https://0.0.0.0"'
+      xcargs: 'HOST_URL="http://127.0.0.1"'
     )
     codecov_reporter(
       token: "$CODECOV_TOKEN"
@@ -29,7 +29,7 @@ platform :macos do
   lane :unit_test do
     scan(
       scheme: "Jellyfish-macOS",
-      xcargs: 'HOST_URL="https://0.0.0.0"'
+      xcargs: 'HOST_URL="http://127.0.0.1"'
     )
     codecov_reporter(
       token: "$CODECOV_TOKEN"
