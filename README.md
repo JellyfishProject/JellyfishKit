@@ -1,6 +1,6 @@
 # Jellyfish
 
-[![Build Status](https://travis-ci.org/JellyfishProject/JellyfishKit.svg?branch=master)](https://travis-ci.org/JellyfishProject/JellyfishKit) [![codecov](https://codecov.io/gh/JellyfishProject/JellyfishKit/branch/master/graph/badge.svg)](https://codecov.io/gh/JellyfishProject/JellyfishKit)
+[![pipeline status](https://gitlab.com/darkcl/JellyfishKit/badges/master/pipeline.svg)](https://gitlab.com/darkcl/JellyfishKit/commits/master) [![codecov](https://codecov.io/gh/JellyfishProject/JellyfishKit/branch/master/graph/badge.svg)](https://codecov.io/gh/JellyfishProject/JellyfishKit)
 
 ## What is this?
 
