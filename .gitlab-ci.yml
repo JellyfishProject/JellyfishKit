@@ -1,4 +1,4 @@
-macOS Tests:
+mac-test:
   stage: test
   before_script:
     - bundle install
@@ -7,5 +7,20 @@ macOS Tests:
   artifacts:
     paths:
       - xcov_output
+  tags:
+    - ios
+
+pages:
+  stage: deploy
+  dependencies:
+    - mac-test
+  script:
+    - mv xcov_output/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
   tags:
     - ios
