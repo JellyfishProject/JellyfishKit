@@ -13,7 +13,7 @@ class MockServerTests: XCTestCase {
     
     var sut: HTTPMockServer = HTTPMockServer()
     
-    var port: in_port_t = 8080
+    var port: in_port_t = 8090
     
     override func setUp() {
         super.setUp()
@@ -23,7 +23,7 @@ class MockServerTests: XCTestCase {
         // 49152-65535
         
         while !(checkTcpPortForListen(port: self.port)) {
-            port = in_port_t(arc4random_uniform(16383) + 49152)
+            port = port + 1
         }
         
         sut = HTTPMockServer(port)
@@ -39,7 +39,7 @@ class MockServerTests: XCTestCase {
         let apiDefinition: APIDefinition = APIDefinition(title: "Not found Example",
                                                          host: "http://example.com",
                                                          resources: [])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
@@ -90,7 +90,7 @@ class MockServerTests: XCTestCase {
                                                                     )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
@@ -154,7 +154,7 @@ class MockServerTests: XCTestCase {
                                                                         )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello/2")!)
@@ -206,7 +206,7 @@ class MockServerTests: XCTestCase {
                                                                     )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello?call=Mr&name=darkcl")!)
@@ -257,7 +257,7 @@ class MockServerTests: XCTestCase {
                                                                     )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
@@ -318,7 +318,7 @@ class MockServerTests: XCTestCase {
                                                                     )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
@@ -393,7 +393,7 @@ class MockServerTests: XCTestCase {
                             )]
                         )]
                 )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         do{
             try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
             let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello/message?q=fallback")!)

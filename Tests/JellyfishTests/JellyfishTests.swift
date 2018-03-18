@@ -20,7 +20,7 @@ class JellyfishTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         while !(checkTcpPortForListen(port: self.port)) {
-            port = in_port_t(arc4random_uniform(16383) + 49152)
+            port = port + 1
         }
         
         Jellyfish.logLevel = .verbose
@@ -44,7 +44,7 @@ class JellyfishTests: XCTestCase {
     func testJellyfish_notFound() {
         sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_normal_blueprint", ofType: "apib")!, port: port)
         
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/notFound")!)
         WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
             
@@ -75,7 +75,7 @@ class JellyfishTests: XCTestCase {
             XCTFail("\(error)")
         }
         
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/message")!)
         WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
             if let error = err {
@@ -111,7 +111,7 @@ class JellyfishTests: XCTestCase {
             XCTFail("\(error)")
         }
         
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://alpha-api.app.net/stream/0/posts/1")!)
         WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
             if let error = err {
@@ -159,7 +159,7 @@ class JellyfishTests: XCTestCase {
             XCTFail("\(error)")
         }
         
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/sessions")!)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: ["email": "email@email.com", "token": "token", "type": "email"], options: .prettyPrinted)

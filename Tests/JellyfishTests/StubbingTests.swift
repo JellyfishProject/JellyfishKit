@@ -20,7 +20,7 @@ class StubbingTests: XCTestCase {
         JellyfishURLProtocol.register()
         
         while !(checkTcpPortForListen(port: self.port)) {
-            port = in_port_t(arc4random_uniform(16383) + 49152)
+            port = port + 1
         }
     }
     
@@ -52,7 +52,7 @@ class StubbingTests: XCTestCase {
                                                                     )]
                                                                 )]
                                                             )])
-        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response")
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
         let mockServer: HTTPMockServer = HTTPMockServer(port)
         
         do{
