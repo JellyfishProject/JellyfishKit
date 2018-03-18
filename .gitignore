@@ -4,6 +4,8 @@
 
 *.xccoverage.plist
 
+xcov_report/
+
 .DS_Store
 vendor/
 xcov_output/

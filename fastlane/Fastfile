@@ -18,8 +18,9 @@ platform :ios do
       scheme: "Jellyfish-iOS",
       xcargs: 'HOST_URL="http://127.0.0.1"'
     )
-    codecov_reporter(
-      token: "$CODECOV_TOKEN"
+    xcov(
+      scheme: "Jellyfish-iOS",
+      output_directory: "xcov_report"
     )
   end
 end
@@ -31,8 +32,9 @@ platform :macos do
       scheme: "Jellyfish-macOS",
       xcargs: 'HOST_URL="http://127.0.0.1"'
     )
-    codecov_reporter(
-      token: "$CODECOV_TOKEN"
+    xcov(
+      scheme: "Jellyfish-macOS",
+      output_directory: "xcov_report"
     )
   end
 end

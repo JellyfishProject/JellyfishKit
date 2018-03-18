@@ -6,7 +6,7 @@ mac-test:
     - bundle exec fastlane macos unit_test
   artifacts:
     paths:
-      - xcov_output
+      - xcov_report
   tags:
     - ios
 
@@ -15,7 +15,7 @@ pages:
   dependencies:
     - mac-test
   script:
-    - mv xcov_output/ public/
+    - mv xcov_report/ public/
   artifacts:
     paths:
       - public
