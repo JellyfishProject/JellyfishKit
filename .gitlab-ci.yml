@@ -3,7 +3,7 @@ macOS Tests:
   before_script:
     - bundle install
   script:
-    - bundle exec fastlane mac unit_test
+    - bundle exec fastlane macos unit_test
   artifacts:
     paths:
       - xcov_output
