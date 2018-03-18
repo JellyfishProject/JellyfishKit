@@ -1,6 +1,6 @@
 # Jellyfish
 
-[![pipeline status](https://gitlab.com/darkcl/JellyfishKit/badges/master/pipeline.svg)](https://gitlab.com/darkcl/JellyfishKit/commits/master) [![coverage report](https://gitlab.com/darkcl/JellyfishKit/badges/master/coverage.svg)](hhttps://darkcl.gitlab.io/JellyfishKit/)
+[![pipeline status](https://gitlab.com/darkcl/JellyfishKit/badges/master/pipeline.svg)](https://gitlab.com/darkcl/JellyfishKit/commits/master) [![coverage report](https://gitlab.com/darkcl/JellyfishKit/badges/master/coverage.svg)](https://darkcl.gitlab.io/JellyfishKit/)
 
 ## What is this?
 
