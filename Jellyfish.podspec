@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "Jellyfish"
-  s.version      = "0.1"
+  s.version      = "0.0.1"
   s.summary      = "API Blueprint mocking in Swift"
   s.description  = <<-DESC
     Jellyfish is an API Blueprint Parser with stubbing written in Swift
   DESC
-  s.homepage     = "https://github.com/darkcl/Jellyfish"
+  s.homepage     = "https://github.com/JellyfishProject/JellyfishKit"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Yeung Yiu Hung" => "hkclex@gmail.com" }
   s.social_media_url   = "https://twitter.com/darkcl_dev"
