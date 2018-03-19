@@ -9,7 +9,7 @@
 import Foundation
 
 fileprivate extension Dictionary where Key: ExpressibleByStringLiteral {
-    public mutating func lowercaseKeys() {
+    mutating func lowercaseKeys() {
         for key in self.keys {
             self[String(describing: key).lowercased() as! Key] = self.removeValue(forKey: key)
         }
@@ -58,13 +58,17 @@ fileprivate extension HttpRequest {
     
     func matchHeader(with apiRequest: APIRequest, ignoreHeaders: [String])  -> Bool {
         
+        let ignores: [String] = ignoreHeaders.map { str -> String in
+            return str.lowercased()
+        }
+        
         var myHeaders: [String: String] = self.headers
         myHeaders.lowercaseKeys()
         
         if var requestHeader = apiRequest.headers {
             requestHeader.lowercaseKeys()
             for key: String in requestHeader.keys {
-                if let value: String = self.headers[key], !ignoreHeaders.contains(key) {
+                if let value: String = self.headers[key], !ignores.contains(key) {
                     if value != requestHeader[key] {
                         return false
                     }
@@ -225,7 +229,7 @@ fileprivate extension APIExample {
     }
 }
 
-fileprivate extension Collection where Indices.Iterator.Element == Index {
+fileprivate extension Collection {
     
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
     subscript (safe index: Index) -> Iterator.Element? {

@@ -34,7 +34,7 @@ class JellyfishTests: XCTestCase {
     }
     
     func testMetadata() {
-        XCTAssertEqual(Jellyfish.version, "0.0.1")
+        XCTAssertEqual(Jellyfish.version, "0.0.3")
     }
     
     func testCache() {

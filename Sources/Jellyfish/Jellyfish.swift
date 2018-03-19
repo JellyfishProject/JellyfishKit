@@ -23,7 +23,7 @@ internal struct JellyfishLogger {
 }
 
 public class Jellyfish {
-    public static let version: String = "0.0.1"
+    public static let version: String = "0.0.3"
     
     public static var logLevel: JellyfishLogLevel = .error
     
