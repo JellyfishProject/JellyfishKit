@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Jellyfish"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "API Blueprint mocking in Swift"
   s.description  = <<-DESC
     Jellyfish is an API Blueprint Parser with stubbing written in Swift
