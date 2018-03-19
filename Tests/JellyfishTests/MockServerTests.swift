@@ -423,6 +423,67 @@ class MockServerTests: XCTestCase {
         
         wait(for: [expectation], timeout: 30.0)
     }
+    
+    
+    func testMockFallback_multiple_headers() {
+        let apiDefinition: APIDefinition = APIDefinition(title: "Single Example",
+                                                         host: "http://example.com",
+                                                         resources: [APIResource(
+                                                            path: "/hello",
+                                                            examples:[APIExample(
+                                                                pathParams: [:],
+                                                                queryParams: [:],
+                                                                requests: [APIRequest(
+                                                                    headers: ["user": "1"],
+                                                                    body: nil,
+                                                                    method: .GET
+                                                                    ),APIRequest(
+                                                                        headers: ["user": "2"],
+                                                                        body: nil,
+                                                                        method: .GET
+                                                                    )],
+                                                                responses: [APIResponse(
+                                                                    headers: nil,
+                                                                    responseCode: 200,
+                                                                    body: "Hello World! User 1".data(using: .utf8)!
+                                                                    ),APIResponse(
+                                                                        headers: nil,
+                                                                        responseCode: 200,
+                                                                        body: "Hello World! User 2".data(using: .utf8)!
+                                                                    )]
+                                                                )]
+                                                            )])
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
+        do{
+            try sut.start(with: apiDefinition, enableStub: true, ignoreHeaders: [], mappingHost: testingHost())
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "http://example.com/hello")!)
+            request.addValue("1", forHTTPHeaderField: "user")
+            WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
+                if let error = err {
+                    XCTFail("\(error)")
+                }
+                
+                guard let data: Data = data else {
+                    XCTFail("Empty Response")
+                    expectation.fulfill()
+                    return
+                }
+                
+                print(res ?? "No Response")
+                
+                let str: String = String(data: data, encoding: .utf8)!
+                
+                XCTAssert(str == "Hello World! User 1", "\(str) is incorrect")
+                
+                expectation.fulfill()
+            }
+        }catch{
+            XCTFail("\(error)")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30.0)
+    }
 }
 
 // MARK - Helper

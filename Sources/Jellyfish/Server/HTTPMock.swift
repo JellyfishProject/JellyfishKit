@@ -8,6 +8,14 @@
 
 import Foundation
 
+fileprivate extension Dictionary where Key: ExpressibleByStringLiteral {
+    public mutating func lowercaseKeys() {
+        for key in self.keys {
+            self[String(describing: key).lowercased() as! Key] = self.removeValue(forKey: key)
+        }
+    }
+}
+
 fileprivate extension Data {
     func compare(with data: Data, contentType: String) -> Bool {
         if contentType == "application/json" {
@@ -50,7 +58,11 @@ fileprivate extension HttpRequest {
     
     func matchHeader(with apiRequest: APIRequest, ignoreHeaders: [String])  -> Bool {
         
-        if let requestHeader = apiRequest.headers {
+        var myHeaders: [String: String] = self.headers
+        myHeaders.lowercaseKeys()
+        
+        if var requestHeader = apiRequest.headers {
+            requestHeader.lowercaseKeys()
             for key: String in requestHeader.keys {
                 if let value: String = self.headers[key], !ignoreHeaders.contains(key) {
                     if value != requestHeader[key] {

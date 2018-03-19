@@ -4,16 +4,28 @@ HOST: https://example.com
 # My API
 ## GET /message
 
++ Request
+
+    + Headers
+
+            Authorization: id="user_id_1", token="user_access_token"
+
 + Response 200 (text/plain)
 
-        Hello World!
+        Hello World! User 1
+
++ Request
+
+    + Headers
+
+            Authorization: id="user_id_2", token="user_access_token"
 
 + Response 200 (text/plain)
 
-        Hello World2!
+        Hello World! User 2
 
 ## POST /message2
 
-+ Response 204 (text/plain)
++ Response 200 (text/plain)
 
         Hello World!

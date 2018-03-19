@@ -48,7 +48,7 @@ class ParserTests: XCTestCase {
                 
                 if let body: Data = resource1.examples[0].responses.first?.body,
                     let str: String = String(data:body, encoding: .utf8){
-                    XCTAssert(str == "Hello World!\n", "\(str) is incorrect")
+                    XCTAssert(str == "Hello World! User 1\n", "\(str) is incorrect")
                 }else {
                     XCTFail("Should have body")
                 }
@@ -62,7 +62,7 @@ class ParserTests: XCTestCase {
                 
                 if let body2: Data = resource1.examples[1].responses.first?.body,
                     let str: String = String(data:body2, encoding: .utf8){
-                    XCTAssert(str == "Hello World2!\n", "\(str) is incorrect")
+                    XCTAssert(str == "Hello World! User 2\n", "\(str) is incorrect")
                 }else {
                     XCTFail("Should have body2")
                 }
@@ -72,7 +72,7 @@ class ParserTests: XCTestCase {
                 
                 XCTAssert(resource2.path == "/message2")
                 XCTAssert(resource2.examples[0].requests.first?.method == .POST, "\(resource2.examples[0].requests.first?.method) is incorrect")
-                XCTAssert(resource2.examples[0].responses.first?.responseCode == 204, "\(String(describing: resource2.examples[0].responses.first?.responseCode)) is incorrect")
+                XCTAssert(resource2.examples[0].responses.first?.responseCode == 200, "\(String(describing: resource2.examples[0].responses.first?.responseCode)) is incorrect")
             case .failure(let err):
                 XCTFail("Should not fail \(err)")
             }
