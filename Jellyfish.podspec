@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Jellyfish"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "API Blueprint mocking in Swift"
   s.description  = <<-DESC
     Jellyfish is an API Blueprint Parser with stubbing written in Swift
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.swift_version = "3.2"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
-  s.source       = { :git => ".git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/JellyfishProject/JellyfishKit.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*.{h,m,swift}", "ext/**/*.{h,m,swift}"
   s.frameworks  = "Foundation", "JavaScriptCore"
   s.resources = "Sources/Jellyfish/Wrapper/drafter.js"
