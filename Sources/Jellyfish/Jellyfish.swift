@@ -10,6 +10,8 @@ import Foundation
 
 public typealias JellyfishErrorHandler = ((Error) -> Void)
 
+public typealias JellyfishMatcherHandler = ((APIRequest) -> (APIResponse))
+
 public enum JellyfishLogLevel: Int {
     case verbose = 0, debug, error, none
 }
@@ -77,5 +79,9 @@ public class Jellyfish {
                  errorHandler?(err)
             }
         }
+    }
+    
+    public func addMatcher(to path: String, handler: @escaping JellyfishMatcherHandler) {
+        mockServer.matchers[path] = handler
     }
 }

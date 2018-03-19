@@ -151,6 +151,59 @@ class JellyfishTests: XCTestCase {
         wait(for: [expectation], timeout: 30.0)
     }
     
+    
+    func testJellyfish_example1_custom_matcher() {
+        sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "testing_custom_handler_blueprint", ofType: "apib")!, port: port) { error in
+            XCTFail("\(error)")
+        }
+        
+        sut.addMatcher(to: "/message") { req in
+            
+            let str: String = "Hello World! User 3\n"
+            
+            return APIResponse(headers: ["Server": "Custom Handler"], responseCode: 200, body: str.data(using: .utf8)!)
+        }
+        
+        let expectation: XCTestExpectation = XCTestExpectation(description: "Wait for response on port \(self.port)")
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: URL(string: "https://example.com/message")!)
+        request.addValue("id=\"user_id_3\", token=\"user_access_token\"", forHTTPHeaderField: "Authorization")
+        
+        WebRequestHelper.makeRequest(request: request as URLRequest) { (data, res , err) in
+            if let error = err {
+                XCTFail("\(error)")
+                expectation.fulfill()
+                return
+            }
+            
+            guard let response: HTTPURLResponse = res as? HTTPURLResponse else {
+                XCTFail("Empty Response")
+                expectation.fulfill()
+                return
+            }
+            
+            XCTAssert(response.statusCode == 200)
+            
+            guard let swifterVersion: String = response.allHeaderFields["Server"] as? String else{
+                XCTFail("Wrong Header")
+                expectation.fulfill()
+                return
+            }
+            
+            XCTAssert(swifterVersion == "Custom Handler")
+            
+            guard let data = data, let str: String = String(data: data, encoding: .utf8) else {
+                XCTFail("Data is empty")
+                return
+            }
+            
+            XCTAssert("Hello World! User 3\n" == str, "\(str) is incorrect")
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 30.0)
+    }
+    
     func testJellyfish_example2() {
         sut.stub(docPath: Bundle(for: JellyfishTests.self).path(forResource: "long_blueprint", ofType: "apib")!, port: port) { error in
             XCTFail("\(error)")

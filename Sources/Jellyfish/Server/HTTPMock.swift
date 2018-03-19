@@ -240,6 +240,9 @@ fileprivate extension Collection {
 class HTTPMockServer {
     var server = HttpServer()
     var port: in_port_t = 8080
+    
+    var matchers: [String: JellyfishMatcherHandler] = [:]
+    
     fileprivate var transactionPair: [HttpTranscationPair] = []
     var posibleValues: [String: [String]] = [:]
     
@@ -253,11 +256,26 @@ class HTTPMockServer {
             JellyfishURLProtocol.addStub(from: definition.host, to: "\(mappingHost):\(port)")
         }
         
-        let response: ((HttpRequest) -> HttpResponse?) = {r in
+        let response: ((HttpRequest) -> HttpResponse?) = {[weak self] r in
             
-            let response: HttpResponse = r.match(with: definition, ignoreHeaders: ignoreHeaders)
+            guard let weakSelf = self else {
+                return HttpResponse.notFound
+            }
             
-            return response
+            if let handler: JellyfishMatcherHandler = weakSelf.matchers[r.path] {
+                let request: APIRequest = APIRequest(headers: r.headers, body: Data(r.body), method: HTTPMethod(rawValue: r.method) ?? .GET)
+                let res: APIResponse = handler(request)
+                
+                return HttpResponse.raw(res.responseCode ?? 200, "OK", res.headers, { writer in
+                    if let data: Data = res.body {
+                        try? writer.write(data)
+                    }
+                })
+            }else{
+                let response: HttpResponse = r.match(with: definition, ignoreHeaders: ignoreHeaders)
+                
+                return response
+            }
         }
         
         server.middleware.append(response)

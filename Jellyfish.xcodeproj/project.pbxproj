@@ -24,6 +24,8 @@
 		74947625205431CF009714B2 /* APIMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 74947621205431CF009714B2 /* APIMeta.m */; };
 		74959A1B205959B400FCC2E1 /* Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74959A1A205959B400FCC2E1 /* Swizzling.swift */; };
 		74959A1C205959B400FCC2E1 /* Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74959A1A205959B400FCC2E1 /* Swizzling.swift */; };
+		74FDCBB2205FDF2C00A03592 /* testing_custom_handler_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = 74FDCBB1205FDF2C00A03592 /* testing_custom_handler_blueprint.apib */; };
+		74FDCBB3205FDF2C00A03592 /* testing_custom_handler_blueprint.apib in Resources */ = {isa = PBXBuildFile; fileRef = 74FDCBB1205FDF2C00A03592 /* testing_custom_handler_blueprint.apib */; };
 		8933C78F1EB5B82C000D00A4 /* JellyfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* JellyfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */; };
 		DD6613992051280800F08198 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6613982051280800F08198 /* Parser.swift */; };
@@ -128,6 +130,7 @@
 		74947620205431CF009714B2 /* APIMeta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIMeta.h; sourceTree = "<group>"; };
 		74947621205431CF009714B2 /* APIMeta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIMeta.m; sourceTree = "<group>"; };
 		74959A1A205959B400FCC2E1 /* Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swizzling.swift; sourceTree = "<group>"; };
+		74FDCBB1205FDF2C00A03592 /* testing_custom_handler_blueprint.apib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testing_custom_handler_blueprint.apib; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* JellyfishTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JellyfishTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* Jellyfish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Jellyfish.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* JellyfishTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JellyfishTests.plist; sourceTree = "<group>"; };
@@ -333,6 +336,7 @@
 		DDDA5B5C20512314008BE17F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				74FDCBB1205FDF2C00A03592 /* testing_custom_handler_blueprint.apib */,
 				DDDA5B5D20512343008BE17F /* testing_normal_blueprint.apib */,
 				DD808CA320526715002380DD /* long_blueprint.apib */,
 				DD6D903C205A360900A43CB5 /* test_ignore.apib */,
@@ -575,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74FDCBB2205FDF2C00A03592 /* testing_custom_handler_blueprint.apib in Resources */,
 				DDDA5B5E20512343008BE17F /* testing_normal_blueprint.apib in Resources */,
 				DD6D903D205A360900A43CB5 /* test_ignore.apib in Resources */,
 				DD808CA420526715002380DD /* long_blueprint.apib in Resources */,
@@ -593,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74FDCBB3205FDF2C00A03592 /* testing_custom_handler_blueprint.apib in Resources */,
 				DDDA5B5F20512343008BE17F /* testing_normal_blueprint.apib in Resources */,
 				DD6D903E205A360900A43CB5 /* test_ignore.apib in Resources */,
 				DD808CA520526715002380DD /* long_blueprint.apib in Resources */,

@@ -17,15 +17,27 @@ public enum HTTPMethod: String {
 }
 
 public struct APIRequest {
-    let headers: [String: String]?
-    let body: Data?
-    let method: HTTPMethod
+    public let headers: [String: String]?
+    public let body: Data?
+    public let method: HTTPMethod
+    
+    public init(headers: [String: String]?, body: Data?, method: HTTPMethod) {
+        self.headers = headers
+        self.body = body
+        self.method = method
+    }
 }
 
 public struct APIResponse {
-    let headers: [String: String]?
-    let responseCode: Int?
-    let body: Data?
+    public let headers: [String: String]?
+    public let responseCode: Int?
+    public let body: Data?
+    
+    public init(headers: [String: String]?, responseCode: Int?, body: Data?) {
+        self.headers = headers
+        self.responseCode = responseCode
+        self.body = body
+    }
 }
 
 public struct APIExample {
