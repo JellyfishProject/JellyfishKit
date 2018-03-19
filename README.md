@@ -9,7 +9,7 @@ Jellyfish is a library that parse `.api` files and stub all web request accordin
 ## TODO
 
 - [x] Read `.api` files and stub requests
-- [ ] Custom matching handler
+- [x] Custom matching handler
 - [ ] Provide options to match json schema
 
 ## Vision
@@ -67,6 +67,17 @@ sessionManager = Alamofire.SessionManager(configuration: .jellyfishConfiguration
 sessionManager.request("https://example.com/message").responseString { result in
     print("==================Alamofire")
     print(result.description)
+}
+
+```
+
+You can override default matcher function with `addMatcher(to:)`
+
+```swift
+
+jellyfish.addMatcher(to: "/message") { req in
+  let str: String = "This is a message"
+  return APIResponse(headers: ["Server": "Custom Handler"], responseCode: 200, body: str.data(using: .utf8)!)
 }
 
 ```
