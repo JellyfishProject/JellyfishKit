@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author             = { "Yeung Yiu Hung" => "hkclex@gmail.com" }
   s.social_media_url   = "https://twitter.com/darkcl_dev"
   s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.9"
+  s.osx.deployment_target = "10.10"
   s.source       = { :git => ".git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*", "ext/**/*"
   s.frameworks  = "Foundation", "JavaScriptCore"
